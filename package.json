@@ -1,5 +1,5 @@
 {
-  "name": "gopika_v1",
+  "name": "sihai_v1",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@emotion/react": "^11.13.3",
+    "@emotion/react": "^11.13.0",
     "@emotion/styled": "^11.13.0",
     "@fontsource/roboto": "^5.0.14",
     "@mui/icons-material": "^5.16.7",
@@ -17,10 +17,11 @@
     "@mui/x-date-pickers": "^7.12.1",
     "axios": "^1.7.4",
     "dayjs": "^1.11.12",
+    "echarts": "^5.5.1",
+    "echarts-for-react": "^3.0.2",
     "next": "14.2.5",
     "react": "^18",
-    "react-dom": "^18",
-    "recharts": "^2.12.7"
+    "react-dom": "^18"
   },
   "devDependencies": {
     "eslint": "^8",
