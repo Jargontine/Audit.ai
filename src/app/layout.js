@@ -3,8 +3,14 @@ import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  userScalable: false
+}
+
 export const metadata = {
-  title: "AI-Driven College Inspection",
+  title: "Audit.ai",
   description: "Smart India Hackathon project for AI-driven college inspections",
 };
 
