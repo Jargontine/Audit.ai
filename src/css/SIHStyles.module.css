@@ -1,208 +1,273 @@
-/* General Styles */
+.whiteButton {
+    color: white;
+    background-color: black;
+    border-radius: 0px;
+    border: 0px solid white;
+    width: '33%';
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    text-align: center;
+    cursor: pointer;
+  }
+
+  .whiteBGButton {
+    color: black;
+    background-color: white;
+    border-radius: 0px;
+    border: 2px solid rgb(11, 194, 62);
+    width: '80%';
+    height: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    text-align: left;
+    cursor: pointer;
+    padding-left:5px;
+    padding-right:20px;
+    padding-top: 1px;
+    padding-bottom: 5px;
+  }
 
 
-/* Header Styles */
-.header {
-  background-color: black;
-  color: white;
-  padding: 10px 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  .smallwhiteButton {
+    color: white;
+    background-color: black;
+    border-radius: 0px;
+    border: 0px solid white;
+    width: '33%';
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    text-align: center;
+    cursor: pointer;
+  }
+
+.orangeButton {
+    color: rgb(232, 141, 35);
+    background-color: black;
+    border-radius: 0px;
+    border: none;
+    width: "33%";
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    text-align: center;
+    cursor: pointer;
+    text-decoration: underline;
+    text-underline-offset: 8px;
+  }
+
+  .largegreenButton {
+    display: inline-block;
+    border-radius: 25px;
+    border: 4px solid rgb(0, 45, 203);
+    background: rgb(11, 194, 62);
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    font-size: 22px;
+    font-weight: 600;
+    width: 18%;
+    padding: 12px;
+    transition: all 0.4s;
+    cursor: pointer;
+ }
+
+ .greenButton {
+    display: inline-block;
+    border-radius: 25px;
+    border: 4px solid white;
+    background: rgb(11, 194, 62);
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    font-size: 22px;
+    font-weight: 600;
+    width: 8%;
+    padding: 12px;
+    transition: all 0.4s;
+    cursor: pointer;
+ }
+
+ .clgreenButton {
+    display: inline-block;
+    border-radius: 25px;
+    border: 4px solid rgb(0, 45, 203);
+    background: rgb(11, 194, 62);
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 600;
+    width: 22%;
+    padding: 4px;
+    transition: all 0.4s;
+    cursor: pointer;
+ }
+
+  .orangeAvatar  {
+    background: rgb(232, 141, 35);
+    color: white;
+  }
+
+  .label1 {
+    text-align: left;
+    font-size: 45px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;  
+  }
+
+  .label2 {
+    text-align: left;
+    font-size: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;  
+  }
+
+  .label3 {
+    text-align: left;
+    font-size: 105px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(232, 141, 35);  
+  }
+
+  .label4 {
+    text-align: left;
+    font-size: 65px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(232, 141, 35);  
+  }
+
+  .label5 {
+    text-align: left;
+    font-size: 40px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;  
+  }
+
+  .label6 {
+    background-color: rgb(0, 45, 203);
+    text-align: center;
+    font-size: 40px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;  
+    padding:30px;
+  }
+
+  .label7 {
+    text-align: center;
+    font-size: 40px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(0, 45, 203);  
+    padding:3px;
+  }
+
+  .label8 {
+    text-align: center;
+    font-size: 40px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;  
+    padding:3px;
+  }
+
+  .label9 {
+    text-align: center;
+    font-size: 45px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 550;
+    color: rgb(0, 45, 203);  
+    padding:3px;
+  }
+
+  .label10 {
+    text-align: center;
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 550;
+    color: rgb(11, 194, 62);
+    padding:3px;
+  }
+
+  .label11 {
+    text-align: left;
+    font-size: 27px;
+    font-weight: 505;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black; 
+    border: 0;
+
+  }
+
+  .label12 {
+    text-align: left;
+    font-size: 22px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;  
+    border: 0;
+  }
+
+  .label13 {
+    text-align: left;
+    font-size: 65px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(0, 45, 203);  
+  }
+
+  .tabledesign{
+    box-shadow: none;
+    border: 0;
+  }
+  
+  .searchbar{
+    align-items: center;
+    width:100%
+    
+  }
+  .largegreenImage {
+    color: green;
+    width: 256px;
+    height: 256px;
+  }
+
+  .largeblueImage {
+    width: 512px;
+    height: 512px;
+  }
+
+  .blueImage {
+    width: 384px;
+    height: 384px;
+  }
+
+  .faiconsearchbox {
+  width: 100%;
+  position: relative;
 }
 
-.logo {
-  font-size: 24px;
-  font-weight: bold;
+.faiconsearchbox a {
+  color: blue;
+  position: absolute;
+  right: 15px;
+  top: 15px;
 }
 
-.nav-links {
-  display: flex;
-  gap: 20px;
-}
-
-.nav-link {
-  color: white;
-  text-decoration: none;
-}
-
-.nav-link.active {
-  color: rgb(232, 141, 35);
-  text-decoration: underline;
-  text-underline-offset: 8px;
-}
-
-.user-avatar {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-}
-
-/* Home Page Styles */
-.home-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 40px 20px;
-}
-
-.hero-section {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 80px;
-}
-
-.hero-content {
-  flex: 1;
-}
-
-.hero-image {
-  flex: 1;
-  text-align: right;
-}
-
-.label3 {
-  font-size: 105px;
-  color: rgb(232, 141, 35);
-  margin: 0;
-}
-
-.label1 {
-  font-size: 45px;
-  color: black;
-  margin: 10px 0;
-}
-
-.label2 {
-  font-size: 25px;
-  color: black;
-  margin-bottom: 20px;
-}
-
-.largegreenButton {
-  background-color: rgb(11, 194, 62);
-  color: white;
-  border: 4px solid rgb(0, 45, 203);
+.searchinput {
+  position: absolute;
+  padding: 10px;
   border-radius: 25px;
-  font-size: 22px;
-  font-weight: 600;
-  padding: 12px 24px;
-  cursor: pointer;
-  transition: all 0.4s;
-}
-
-.section {
-  margin-bottom: 80px;
-}
-
-.label4 {
-  font-size: 65px;
-  color: rgb(232, 141, 35);
-  margin-bottom: 20px;
-}
-
-.label5 {
-  font-size: 18px;
-  color: black;
-  line-height: 1.6;
-}
-
-.features-section {
-  background-color: rgb(232, 141, 35);
-  color: white;
-  padding: 40px;
-  margin-bottom: 80px;
-}
-
-.features-list {
-  list-style-type: none;
-  padding: 0;
-}
-
-.features-list li {
-  margin-bottom: 10px;
-}
-
-.try-project-button {
-  background-color: rgb(11, 45, 203);
-  color: white;
-  border: none;
-  border-radius: 5px;
-  font-size: 18px;
-  padding: 10px 20px;
-  cursor: pointer;
-  transition: all 0.4s;
-}
-
-/* College List Styles */
-.college-list-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 40px 20px;
-}
-
-.search-bar {
-  width: 100%;
-  padding: 10px;
+  width: 30%;
+  font-family: Arial;
   font-size: 16px;
-  margin-bottom: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-.college-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-.college-table th,
-.college-table td {
-  border: 1px solid #ccc;
-  padding: 10px;
+  color: black;
   text-align: left;
+  border: 4px solid rgb(232,141,35);
 }
 
-.college-table th {
-  background-color: #f0f0f0;
-  font-weight: bold;
-}
-
-.dashboard-link {
-  background-color: rgb(11, 45, 203);
-  color: white;
-  border: none;
-  border-radius: 5px;
-  padding: 5px 10px;
-  cursor: pointer;
-  text-decoration: none;
-}
-
-/* Dashboard Overview Styles */
-.dashboard-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 40px 20px;
-}
-
-.dashboard-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-}
-
-.dashboard-card {
-  background-color: white;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-}
-
-.card-title {
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 20px;
-}
-
-.pie-chart-container {
-  height: 300px;
+.searchlabel {
+  position: relative;
+  background: none;
+  color: black;
+  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+  left: 1em;
+  top: 0.75em;
+  cursor: text;
+  transition: top 350ms ease-in, font-size 30ms ease-in;
 }

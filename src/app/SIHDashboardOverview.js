@@ -77,6 +77,9 @@ export default function SIHDashboardOverview(props) {
             bottom: '3%',
             containLabel: true
         },
+        color: [
+            '#F89C31'
+        ],
         xAxis: [
             {
                 type: 'category',
@@ -107,7 +110,7 @@ export default function SIHDashboardOverview(props) {
 
     let dashBoardOverviewContent = (
         <div>
-            <Box border={0} sx={{ mt: 20, ml: 20, width: "100%", display: 'flex', flexWrap: 'wrap' }}>
+            <Box border={0} sx={{ mt: 12, ml: 20, width: "100%", display: 'flex', flexWrap: 'wrap' }}>
                 <Box sx={{ width: "45%", ml: 5 }}>
                     <Box sx={{ width: "100%", display: 'flex', flexWrap: 'wrap' }}>
                         <Box sx={{ width: '33%' }}>
@@ -136,14 +139,14 @@ export default function SIHDashboardOverview(props) {
                     <ReactEcharts option={pieValues} />;
                 </Box>
             </Box>
-            <Box sx={{ mt: 20, ml: 20, width: "100%", display: 'flex', flexWrap: 'wrap' }}>
+            <Box sx={{ mt: 18, ml: 20, width: "100%", display: 'flex', flexWrap: 'wrap' }}>
                 <Box sx={{ width: "45%", ml: 5 }}>
                     <Box sx={{ width: "100%", display: 'flex', flexWrap: 'wrap' }}>
                         <Box sx={{ width: '50%' }}>
                             <label className={SIHstyles.label7}>Top Colleges by CGPA</label>
                         </Box>
                         <Box border={0} sx={{ width: '25%' }}>
-                            <button type="button" className={SIHstyles.whiteBGButton} onClick={() => showPage('GetStarted')}>Rank By &nbsp;&nbsp;&nbsp;<ArrowDropDownOutlinedIcon fontSize='medium' /></button>
+                            <button type="button" className={SIHstyles.whiteBGButton} onClick={() => showPage('GetStarted')}>Rank By &nbsp;&nbsp;&nbsp; &#x25B6;</button>
                         </Box>
                         <Box border={0} sx={{ width: '25%' }}>
                             <button type="button" className={SIHstyles.whiteBGButton} onClick={() => showPage('GetStarted')}>Filter  &nbsp;&nbsp;&nbsp;  (Off)</button>
@@ -152,17 +155,16 @@ export default function SIHDashboardOverview(props) {
                     </Box>
                     <Box sx={{ mt: 10, width: "100%", display: 'flex', flexWrap: 'wrap' }}>
                         <Box sx={{ width: '100%' }}>
-                            <label>1. IIT Bombay - </label><br></br>
-                            <label>2. IIT Madras - 9.46</label><br></br>
-                            <label>1. IIT Bombay</label><br></br>
-                            <label>1. IIT Bombay</label><br></br>
-                            <label>1. IIT Bombay</label><br></br>
-                            <label>1. IIT Bombay</label><br></br>
-                            <label>1. IIT Bombay</label><br></br>
-                            <label>1. IIT Bombay</label><br></br>
-                            <label>1. IIT Bombay</label><br></br>
-                            <label>1. IIT Bombay</label><br></br>
-                            
+                            <label className={SIHstyles.label2}>1. IIT Bombay - 9.85 </label><br></br><br></br>
+                            <label className={SIHstyles.label2}>2. IIT Madras - 9.46</label><br></br><br></br>
+                            <label className={SIHstyles.label2}>3. IIT Delhi - 9.21</label><br></br><br></br>
+                            <label className={SIHstyles.label2}>4. IIM Kolkata - 9.21</label><br></br><br></br>
+                            <label className={SIHstyles.label2}>5. IIM Bangalore - 9.00</label><br></br><br></br>
+                            <label className={SIHstyles.label2}>6. NIT Trichy</label><br></br><br></br>
+                            <label className={SIHstyles.label2}>7. IIT Kolkata</label><br></br><br></br>
+                            <label className={SIHstyles.label2}>8. BITS Pilani</label><br></br><br></br>
+                            <label className={SIHstyles.label2}>9. NIT Pondicherry</label><br></br><br></br>
+                            <label className={SIHstyles.label2}>10. Anna University</label><br></br><br></br>
                         </Box>
                     </Box>
                 </Box>

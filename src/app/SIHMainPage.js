@@ -1,64 +1,119 @@
-import React, { useState } from 'react';
-import { Box, AppBar, Toolbar, Typography, Button, Avatar, Container } from '@mui/material';
+import * as React from 'react';
+import { useState, useEffect } from "react";
+import SIHstyles from '../css/SIHStyles.module.css'
+import SIHHomePage from './SIHHomePage'
+import SIHCollegeList from './SIHCollegeList'
+import SIHDashboardOverview from './SIHDashboardOverview'
+
+import Box from '@mui/material/Box';
+import Avatar from '@mui/material/Avatar';
 import Image from 'next/image';
-import SIHHomePage from './SIHHomePage';
-import SIHCollegeList from './SIHCollegeList';
-import SIHDashboardOverview from './SIHDashboardOverview';
-import styles from '../css/SIHStyles.module.css';
+import { deepOrange, deepPurple } from '@mui/material/colors';
+import ArrowDropDownOutlinedIcon from '@mui/icons-material/ArrowDropDownOutlined';
 
-export default function SIHMainPage() {
-  const [pageName, setPageName] = useState('HomePage');
+import navbarlogo from '../images/AuditAIlogo1.png';
 
-  const showPage = (page) => {
-    setPageName(page);
-  };
+export default function PrincipalMainPage(props) {
 
-  let mainBodyPage;
-  switch (pageName) {
-    case 'HomePage':
-      mainBodyPage = <SIHHomePage />;
-      break;
-    case 'CollegeList':
-      mainBodyPage = <SIHCollegeList />;
-      break;
-    case 'DashboardOverview':
-      mainBodyPage = <SIHDashboardOverview />;
-      break;
-    default:
-      mainBodyPage = <SIHHomePage />;
-  }
+    const [pageName, setPageName] = useState('HomePage');
+    const [avatarInitials, setAvatarInitials] = useState('');
 
-  return (
-    <Box sx={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
-      <AppBar position="static" color="default" elevation={0}>
-        <Toolbar>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            <Image src="/images/logoipsum.svg" alt="Company Logo" width={130} height={80} />
-          </Typography>
-          <Button
-            className={pageName === 'HomePage' ? styles.orangeButton : styles.whiteButton}
-            onClick={() => showPage('HomePage')}
-          >
-            Home
-          </Button>
-          <Button
-            className={pageName === 'CollegeList' ? styles.orangeButton : styles.whiteButton}
-            onClick={() => showPage('CollegeList')}
-          >
-            Colleges
-          </Button>
-          <Button
-            className={pageName === 'DashboardOverview' ? styles.orangeButton : styles.whiteButton}
-            onClick={() => showPage('DashboardOverview')}
-          >
-            Dashboard Overview
-          </Button>
-          <Avatar alt="User" src="/images/user-avatar.png" />
-        </Toolbar>
-      </AppBar>
-      <Container component="main" sx={{ flexGrow: 1, py: 4 }}>
-        {mainBodyPage}
-      </Container>
-    </Box>
-  );
+
+    function showPage(page) {
+        console.log("Page Name is ::" + page + "::");
+        if (page === 'Home') {
+            setPageName('HomePage');
+        } else if (page === 'CollegeList') {
+            setPageName('CollegeList');
+        } else if (page === 'DashboardOverview') {
+            setPageName('DashboardOverview');
+        }
+    }
+
+    useEffect(() => {
+        mountFunction();
+    }, []);
+
+    async function mountFunction() {
+        // Fetch the User details from the backend
+        setAvatarInitials('SI');
+        showPage('Home', 0);
+    }
+
+    let mainBodyPage = '';
+    if (pageName === 'HomePage') {
+        mainBodyPage = <SIHHomePage />;
+    } else if (pageName === 'CollegeList') {
+        mainBodyPage = <SIHCollegeList />;
+    } else if (pageName === 'DashboardOverview') {
+        mainBodyPage = <SIHDashboardOverview />;
+    }
+
+
+    let headerContent = (
+        <div>
+            <Box border={0} sx={{ width: "100%", bgcolor: 'rgb(0,0,0)', display: 'flex', flexWrap: 'wrap' }}>
+                <Box sx={{ width: '35%' }}>
+                        <Avatar sx={{ mt: 1, ml:3, width: 60, height: 60 }} >
+                            <Image src={navbarlogo} alt="Logo" fill sizes="(max-width: 617px) 100vw, (max-width: 1200px) 50vw, 33vw" />
+                        </Avatar>
+                </Box>
+                <Box border={1} direction="column" justifyContent="center" alignItems="center" sx={{ width: '35%', display: 'flex', flexWrap: 'wrap' }}>
+                    {(pageName === "HomePage") ?
+                        <Box sx={{ mt: 3, mb: 3, mr: 10 }}>
+                            <button type="button" className={SIHstyles.orangeButton} onClick={() => showPage('Home')}>Home</button>
+                        </Box>
+                        :
+                        <Box sx={{ mt: 3, mb: 3, mr: 10 }}>
+                            <button type="button" className={SIHstyles.whiteButton} onClick={() => showPage('Home')}>Home</button>
+                        </Box>
+                    }
+                    {(pageName === "CollegeList") ?
+                        <Box sx={{ mt: 3, mb: 3, mr: 10 }}>
+                            <button type="button" className={SIHstyles.orangeButton} onClick={() => showPage('CollegeList')}>Colleges</button>
+                        </Box>
+                        :
+                        <Box sx={{ mt: 3, mb: 3, mr: 10 }}>
+                            <button type="button" className={SIHstyles.whiteButton} onClick={() => showPage('CollegeList')}>Colleges</button>
+                        </Box>
+                    }
+                    {(pageName === "DashboardOverview") ?
+                        <Box sx={{ mt: 3, mb: 3, mr: 10 }}>
+                            <button type="button" className={SIHstyles.orangeButton} onClick={() => showPage('DashboardOverview')}>Dashboard Overview</button>
+                        </Box>
+                        :
+                        <Box border={0} sx={{ mt: 3, mb: 3, mr: 10 }}>
+                            <button type="button" className={SIHstyles.whiteButton} onClick={() => showPage('DashboardOverview')}>Dashboard Overview</button>
+                        </Box>
+                    }
+                </Box>
+                <Box border={1} direction="column" justifyContent="center" alignItems="center" sx={{ width: '30%', display: 'flex', flexWrap: 'wrap' }}>
+                    <Box sx={{ mr: 2 }}>
+                        <Avatar className={SIHstyles.orangeAvatar}>{avatarInitials}</Avatar>
+                    </Box>
+                    <Box>
+                        <button type="button" className={SIHstyles.smallwhiteButton} onClick={() => showPage('personMenu')}>Hello, Smart India</button>
+                    </Box>
+                </Box>
+            </Box>
+        </div>
+    )
+
+    let menuMainPageContent = (
+        <div></div>
+    )
+
+    return (
+        <div id="SIHMainPage">
+            <Box border={1} width="100%" sx={{ display: 'flex', flexDirection: 'column', minHeight: '100vh', bgcolor:'white' }}>
+                <Box borderBottom={0} >
+                    {headerContent}
+                </Box>
+                <Box border={0}>
+                    {mainBodyPage}
+                </Box>
+            </Box>
+        </div>
+    )
+
 }
