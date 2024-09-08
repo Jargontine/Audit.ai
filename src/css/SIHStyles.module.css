@@ -1,0 +1,208 @@
+/* General Styles */
+
+
+/* Header Styles */
+.header {
+  background-color: black;
+  color: white;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+}
+
+.nav-link.active {
+  color: rgb(232, 141, 35);
+  text-decoration: underline;
+  text-underline-offset: 8px;
+}
+
+.user-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+/* Home Page Styles */
+.home-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.hero-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 80px;
+}
+
+.hero-content {
+  flex: 1;
+}
+
+.hero-image {
+  flex: 1;
+  text-align: right;
+}
+
+.label3 {
+  font-size: 105px;
+  color: rgb(232, 141, 35);
+  margin: 0;
+}
+
+.label1 {
+  font-size: 45px;
+  color: black;
+  margin: 10px 0;
+}
+
+.label2 {
+  font-size: 25px;
+  color: black;
+  margin-bottom: 20px;
+}
+
+.largegreenButton {
+  background-color: rgb(11, 194, 62);
+  color: white;
+  border: 4px solid rgb(0, 45, 203);
+  border-radius: 25px;
+  font-size: 22px;
+  font-weight: 600;
+  padding: 12px 24px;
+  cursor: pointer;
+  transition: all 0.4s;
+}
+
+.section {
+  margin-bottom: 80px;
+}
+
+.label4 {
+  font-size: 65px;
+  color: rgb(232, 141, 35);
+  margin-bottom: 20px;
+}
+
+.label5 {
+  font-size: 18px;
+  color: black;
+  line-height: 1.6;
+}
+
+.features-section {
+  background-color: rgb(232, 141, 35);
+  color: white;
+  padding: 40px;
+  margin-bottom: 80px;
+}
+
+.features-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.features-list li {
+  margin-bottom: 10px;
+}
+
+.try-project-button {
+  background-color: rgb(11, 45, 203);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: all 0.4s;
+}
+
+/* College List Styles */
+.college-list-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.search-bar {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.college-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.college-table th,
+.college-table td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: left;
+}
+
+.college-table th {
+  background-color: #f0f0f0;
+  font-weight: bold;
+}
+
+.dashboard-link {
+  background-color: rgb(11, 45, 203);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+/* Dashboard Overview Styles */
+.dashboard-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.dashboard-card {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+.card-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.pie-chart-container {
+  height: 300px;
+}
