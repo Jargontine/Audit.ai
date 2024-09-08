@@ -1,53 +1,186 @@
-import React from 'react';
-import { Box, Typography, Paper, Grid } from '@mui/material';
-import { PieChart, Pie, Cell, ResponsiveContainer } from 'recharts';
-import styles from '../css/SIHStyles.module.css';
+import * as React from 'react';
+import { useState, useEffect } from "react";
+import SIHstyles from '../css/SIHStyles.module.css'
 
-const data = [
-  { name: 'Group A', value: 400 },
-  { name: 'Group B', value: 300 },
-  { name: 'Group C', value: 300 },
-  { name: 'Group D', value: 200 },
-];
+import ReactEcharts from "echarts-for-react";
+import ArrowDropDownOutlinedIcon from '@mui/icons-material/ArrowDropDownOutlined';
 
-const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
+// Card related
+import Card from '@mui/material/Card';
+import CardHeader from '@mui/material/CardHeader';
+import CardContent from '@mui/material/CardContent';
+import CardActions from '@mui/material/CardActions';
 
-export default function SIHDashboardOverview() {
-  return (
-    <Box>
-      <Typography variant="h2" className={styles.label4}>
-        Overview
-      </Typography>
-      <Grid container spacing={3}>
-        <Grid item xs={12} md={6}>
-          <Paper sx={{ p: 2, height: '100%' }}>
-            <Typography variant="h6">List of Top Colleges</Typography>
-            {/* Add a list or table of top colleges here */}
-          </Paper>
-        </Grid>
-        <Grid item xs={12} md={6}>
-          <Paper sx={{ p: 2, height: '100%' }}>
-            <Typography variant="h6">College Distribution</Typography>
-            <ResponsiveContainer width="100%" height={300}>
-              <PieChart>
-                <Pie
-                  data={data}
-                  cx="50%"
-                  cy="50%"
-                  labelLine={false}
-                  outerRadius={80}
-                  fill="#8884d8"
-                  dataKey="value"
-                >
-                  {data.map((entry, index) => (
-                    <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
-                  ))}
-                </Pie>
-              </PieChart>
-            </ResponsiveContainer>
-          </Paper>
-        </Grid>
-      </Grid>
-    </Box>
-  );
+import Box from '@mui/material/Box';
+import Avatar from '@mui/material/Avatar';
+import Image from 'next/image';
+
+
+export default function SIHDashboardOverview(props) {
+
+    const pieValues = {
+        tooltip: {
+            trigger: 'item',
+            textStyle: {
+                fontSize: 14
+            }
+        },
+        grid: {
+            height: "500px",
+            width: "500px"
+        },
+        color: [
+            '#CBB6F8',
+            '#5E3FBE',
+            '#E5DAFB'
+        ],
+        legend: {
+            orient: 'vertical',
+            left: 'right'
+        },
+        series: [
+            {
+                name: 'Colleges',
+                type: 'pie',
+                radius: '90%',
+                data: [
+                    { value: 30, name: 'Colleges Inspected [30%]' },
+                    { value: 30, name: 'Colleges Submitted [30%]' },
+                    { value: 40, name: 'Un-inspected [40%]' }
+                ],
+                emphasis: {
+                    scale: true,
+                    scaleSize: 10,
+                    itemStyle: {
+                        shadowBlur: 10,
+                        shadowOffsetX: 0,
+                        shadowColor: 'rgba(0, 45, 203, 0.5)'
+                    },
+                    label: {
+                        fontSize: 18
+                    }
+                }
+            }
+        ]
+    };
+
+    const barValues = {
+        tooltip: {
+            trigger: 'axis',
+            axisPointer: {
+                type: 'shadow'
+            }
+        },
+        grid: {
+            left: '3%',
+            right: '4%',
+            bottom: '3%',
+            containLabel: true
+        },
+        xAxis: [
+            {
+                type: 'category',
+                data: ['IIT Bombay', 'IIT Madras', 'IIT Delhi', 'IIM Kolkata', 'IIM Bangalore', 'NIT Trichy', 'IIT Kolkata', 'BITS Pilani', 'NIT Pondicherry', 'Anna University'],
+                axisTick: {
+                    alignWithLabel: true
+                },
+                nameTextStyle: {
+                    silent: false
+                }
+            }
+        ],
+        yAxis: [
+            {
+                type: 'value'
+            }
+        ],
+        series: [
+            {
+                name: 'Direct',
+                type: 'bar',
+                barWidth: '60%',
+                data: [9.85, 9.46, 9.21, 9.21, 9.00, 8.98, 8.81, 8.76, 8.54, 8.39]
+            }
+        ]
+    };
+
+
+    let dashBoardOverviewContent = (
+        <div>
+            <Box border={0} sx={{ mt: 20, ml: 20, width: "100%", display: 'flex', flexWrap: 'wrap' }}>
+                <Box sx={{ width: "45%", ml: 5 }}>
+                    <Box sx={{ width: "100%", display: 'flex', flexWrap: 'wrap' }}>
+                        <Box sx={{ width: '33%' }}>
+                            <label className={SIHstyles.label9}>260</label> <br></br><label className={SIHstyles.label10}>Total Colleges</label>
+                        </Box>
+                        <Box sx={{ width: '33%' }}>
+                            <label className={SIHstyles.label9}>78</label> <br></br><label className={SIHstyles.label10}>Colleges Inspected</label>
+                        </Box>
+                        <Box sx={{ width: '33%' }}>
+                            <label className={SIHstyles.label9}>78</label> <br></br><label className={SIHstyles.label10}>Submitted</label>
+                        </Box>
+                    </Box>
+                    <Box sx={{ mt: 10, width: "100%", display: 'flex', flexWrap: 'wrap' }}>
+                        <Box sx={{ width: '33%' }}>
+                            <label className={SIHstyles.label9}>104</label> <br></br><label className={SIHstyles.label10}>Un-inspected</label>
+                        </Box>
+                        <Box sx={{ width: '33%' }}>
+                            <label className={SIHstyles.label9}>5</label> <br></br><label className={SIHstyles.label10}>9+ CGPA univ.</label>
+                        </Box>
+                        <Box sx={{ width: '33%' }}>
+                            <label className={SIHstyles.label9}>100</label> <br></br><label className={SIHstyles.label10}>Passing Colleges</label>
+                        </Box>
+                    </Box>
+                </Box>
+                <Box sx={{ width: "40%" }}>
+                    <ReactEcharts option={pieValues} />;
+                </Box>
+            </Box>
+            <Box sx={{ mt: 20, ml: 20, width: "100%", display: 'flex', flexWrap: 'wrap' }}>
+                <Box sx={{ width: "45%", ml: 5 }}>
+                    <Box sx={{ width: "100%", display: 'flex', flexWrap: 'wrap' }}>
+                        <Box sx={{ width: '50%' }}>
+                            <label className={SIHstyles.label7}>Top Colleges by CGPA</label>
+                        </Box>
+                        <Box border={0} sx={{ width: '25%' }}>
+                            <button type="button" className={SIHstyles.whiteBGButton} onClick={() => showPage('GetStarted')}>Rank By &nbsp;&nbsp;&nbsp;<ArrowDropDownOutlinedIcon fontSize='medium' /></button>
+                        </Box>
+                        <Box border={0} sx={{ width: '25%' }}>
+                            <button type="button" className={SIHstyles.whiteBGButton} onClick={() => showPage('GetStarted')}>Filter  &nbsp;&nbsp;&nbsp;  (Off)</button>
+                        </Box>
+
+                    </Box>
+                    <Box sx={{ mt: 10, width: "100%", display: 'flex', flexWrap: 'wrap' }}>
+                        <Box sx={{ width: '100%' }}>
+                            <label>1. IIT Bombay - </label><br></br>
+                            <label>2. IIT Madras - 9.46</label><br></br>
+                            <label>1. IIT Bombay</label><br></br>
+                            <label>1. IIT Bombay</label><br></br>
+                            <label>1. IIT Bombay</label><br></br>
+                            <label>1. IIT Bombay</label><br></br>
+                            <label>1. IIT Bombay</label><br></br>
+                            <label>1. IIT Bombay</label><br></br>
+                            <label>1. IIT Bombay</label><br></br>
+                            <label>1. IIT Bombay</label><br></br>
+                            
+                        </Box>
+                    </Box>
+                </Box>
+                <Box border={0} sx={{ width: "40%" }}>
+                    <ReactEcharts option={barValues} style={{
+                        height: '600px',
+                        width: '100%',
+                    }} />;
+                </Box>
+            </Box>
+
+        </div>
+    )
+
+    return (
+        <div id="SIHHomePage">
+            {dashBoardOverviewContent}
+        </div >
+    )
+
 }
