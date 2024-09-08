@@ -160,11 +160,11 @@ export default function SIHDashboardOverview(props) {
                             <label className={SIHstyles.label2}>3. IIT Delhi - 9.21</label><br></br><br></br>
                             <label className={SIHstyles.label2}>4. IIM Kolkata - 9.21</label><br></br><br></br>
                             <label className={SIHstyles.label2}>5. IIM Bangalore - 9.00</label><br></br><br></br>
-                            <label className={SIHstyles.label2}>6. NIT Trichy</label><br></br><br></br>
-                            <label className={SIHstyles.label2}>7. IIT Kolkata</label><br></br><br></br>
-                            <label className={SIHstyles.label2}>8. BITS Pilani</label><br></br><br></br>
-                            <label className={SIHstyles.label2}>9. NIT Pondicherry</label><br></br><br></br>
-                            <label className={SIHstyles.label2}>10. Anna University</label><br></br><br></br>
+                            <label className={SIHstyles.label2}>6. NIT Trichy - 8.98</label><br></br><br></br>
+                            <label className={SIHstyles.label2}>7. IIT Kolkata - 8.81 </label><br></br><br></br>
+                            <label className={SIHstyles.label2}>8. BITS Pilani - 8.76</label><br></br><br></br>
+                            <label className={SIHstyles.label2}>9. NIT Pondicherry - 8.54</label><br></br><br></br>
+                            <label className={SIHstyles.label2}>10. Anna University - 8.39</label><br></br><br></br>
                         </Box>
                     </Box>
                 </Box>
